@@ -1,7 +1,7 @@
 'use strict'
 
 const protocolCallbacks = require('@services/protocolCallbacks/')
-const bapQueries = require('@database/storage/bap/queries')
+//const bapQueries = require('@database/storage/bap/queries')
 
 exports.search = async (requestBody) => {
 	try {

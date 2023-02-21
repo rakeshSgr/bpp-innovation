@@ -1,10 +1,10 @@
 'use strict'
 
-const { internalRequests } = require('@helpers/requests')
-const { contextBuilder } = require('@utils/contextBuilder')
-const { descriptorBuilder } = require('@utils/descriptorBuilder')
+//const { internalRequests } = require('@helpers/requests')
+//const { contextBuilder } = require('@utils/contextBuilder')
+//const { descriptorBuilder } = require('@utils/descriptorBuilder')
 const { onSearchRequestDTO } = require('@dtos/onSearchRequest')
-const { externalRequests } = require('@helpers/requests')
+//const { externalRequests } = require('@helpers/requests')
 
 exports.onSearch = async (callbackData) => {
 	try {

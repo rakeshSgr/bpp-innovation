@@ -1,7 +1,7 @@
 'use strict'
 const _sodium = require('libsodium-wrappers')
 const { base64_variants } = require('libsodium-wrappers')
-const { getSubscriberDetails } = require('@utils/lookup')
+//const { getSubscriberDetails } = require('@utils/lookup')
 
 exports.createAuthorizationHeader = async (message) => {
 	const { signingString, expires, created } = await createSigningString(JSON.stringify(message))
