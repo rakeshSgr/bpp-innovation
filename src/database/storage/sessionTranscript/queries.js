@@ -17,6 +17,20 @@ exports.findById = async (id) => {
 		console.log(err)
 	}
 }
+exports.findOne = async (filter) => {
+	try {
+		return await sessionTranscript.findOne({ filter }).lean()
+	} catch (err) {
+		console.log(err)
+	}
+}
+exports.findById = async (id) => {
+	try {
+		return await sessionTranscript.findById(id).lean()
+	} catch (err) {
+		console.log(err)
+	}
+}
 
 exports.findOneAndUpdate = async (filter, update) => {
 	try {
@@ -24,7 +38,7 @@ exports.findOneAndUpdate = async (filter, update) => {
 		console.log(doc)
 		return doc
 	} catch (err) {
-		console.log('User.findOrCreate: ', err)
+		console.log('session.findOrCreate: ', err)
 		throw err
 	}
 }

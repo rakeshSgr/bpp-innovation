@@ -25,7 +25,7 @@ exports.autofill = async (req, res) => {
 
 exports.transcriptCallback = async (req, res) => {
 	try {
-		console.log(req.headers.authorization)
+		//console.log(req.headers.authorization)
 		if (req.headers.authorization != process.env.CALLBACK_TOKEN) {
 			await res.status(401).send('unauth')
 		} else {

@@ -16,6 +16,10 @@ const sessionTranscript = new mongoose.Schema({
 		type: String,
 		required: false,
 	},
+	summary: {
+		type: String,
+		required: false,
+	},
 })
 
 const model = db.model('sessionTranscript', sessionTranscript)

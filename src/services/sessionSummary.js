@@ -2,22 +2,17 @@
 
 const axios = require('axios')
 const sessionTranscriptQueries = require('@database/storage/sessionTranscript/queries')
+const { kafkaProducers } = require('@helpers/kafkaProducers')
 
 exports.sessionSummarization = async (requestBody) => {
 	try {
 		let headers = {
 			authorization: process.env.ASSENMBLYAI_TOKEN,
 		}
-		const response = await axios.get(
+		const transcriptRes = await axios.get(
 			process.env.ASSEMBLYAI_URI + '/' + requestBody.transcript_id,
 
 			{ headers, timeout: 0 }
-		)
-		await sessionTranscriptQueries.findOneAndUpdate(
-			{
-				transcriptId: requestBody.transcript_id,
-			},
-			{ sessionTranscript: response.data.text }
 		)
 
 		headers = {
@@ -25,16 +20,34 @@ exports.sessionSummarization = async (requestBody) => {
 		}
 		const body = {
 			model: 'text-davinci-003',
-			prompt: 'Summarize this meeting in brief\n\n\nAbout: ' + response.data.text,
+			prompt: 'Summarize this meeting in brief\n\n\nAbout: ' + transcriptRes.data.text,
 			temperature: 0.7,
 			max_tokens: 500,
 			top_p: 1,
 			frequency_penalty: 0.6,
 			presence_penalty: 1,
 		}
-		const res = await axios.post(process.env.CHATGPT_COMPLETIONS_URI, body, { headers, timeout: 0 })
-		console.log('sssssss', res.data.choices)
+		const summaryRes = await axios.post(process.env.CHATGPT_COMPLETIONS_URI, body, { headers, timeout: 0 })
+		await sessionTranscriptQueries.findOneAndUpdate(
+			{
+				transcriptId: requestBody.transcript_id,
+			},
+			{ sessionTranscript: transcriptRes.data.text, summary: summaryRes.data.choices[0].text }
+		)
+		const sessionTranscript = await sessionTranscriptQueries.findOne({ transcriptId: requestBody.transcript_id })
+		Promise.all([
+			kafkaProducers.session(sessionTranscript.sessionId, {
+				sessionId: sessionTranscript.sessionId,
+				sessionSummary: summaryRes.data.choices[0].text,
+			}),
+		])
+			.then(() => {
+				console.log('Session Summary Passed To Producer Successfully.')
+			})
+			.catch(() => {
+				console.error('Something went wrong while passing session Summary!')
+			})
 	} catch (err) {
-		console.log(err)
+		console.error('sessionSummarization error', err)
 	}
 }
