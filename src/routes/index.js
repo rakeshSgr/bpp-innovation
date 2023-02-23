@@ -5,6 +5,6 @@ const { authVerifier } = require('@middlewares/authVerifier')
 
 router.use(authVerifier)
 router.post('/search', bppController.search)
-router.get('/autofill', bppController.autofill)
+router.post('/autofill', bppController.autofill)
 
 module.exports = router
