@@ -14,7 +14,7 @@ const sessionSummarization = async (value) => {
 		const body = {
 			audio_url: url,
 			language_code: 'en',
-			webhook_url: 'https://webhook.site/edcee813-74b0-414a-8e2d-4417070aed94',
+			webhook_url: 'https://dev.elevate-apis.shikshalokam.org/bpp-innovation/transcriptCallback',
 			webhook_auth_header_name: 'authorization',
 			webhook_auth_header_value: process.env.CALLBACK_TOKEN,
 		}
