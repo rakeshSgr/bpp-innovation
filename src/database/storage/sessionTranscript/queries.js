@@ -35,7 +35,6 @@ exports.findById = async (id) => {
 exports.findOneAndUpdate = async (filter, update) => {
 	try {
 		let doc = await sessionTranscript.findOneAndUpdate(filter, update)
-		console.log(doc)
 		return doc
 	} catch (err) {
 		console.log('session.findOrCreate: ', err)
