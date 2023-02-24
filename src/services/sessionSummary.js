@@ -38,6 +38,7 @@ exports.sessionSummarization = async (requestBody) => {
 		console.log('sessionTranscript.sessionSummarization', sessionTranscript)
 		Promise.all([
 			kafkaProducers.session(sessionTranscript.sessionId, {
+				type: 'SESSION_SUMMARY',
 				sessionId: sessionTranscript.sessionId,
 				sessionSummary: summaryRes.data.choices[0].text,
 			}),
