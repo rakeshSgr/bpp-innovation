@@ -16,6 +16,6 @@ exports.initialize = async () => {
 			},
 		})
 	} catch (err) {
-		console.log(err)
+		console.log('kafkaCon initialize error!',err)
 	}
 }

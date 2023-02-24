@@ -1,32 +1,34 @@
 'use strict'
-/* const crypto = require('crypto')
-const { sessionToESTransformer } = require('@helpers/sessionToESTransformer')
-const { kafkaProducers } = require('@helpers/kafkaProducers')
-const { faker } = require('@faker-js/faker')
- */
-const sessionCreation = async (value) => {
+
+const axios = require('axios')
+const sessionTranscriptQueries = require('@database/storage/sessionTranscript/queries')
+
+const sessionSummarization = async (value) => {
 	try {
-		value.fulfillmentId = crypto.randomUUID()
-		//const sessionImage = value.image[0]
-		value.image = faker.image.abstract() + '?random=' + faker.random.alphaNumeric(10) //Refactor this away as soon as possible. Band-aid Solution
-		const { agent, fulfillment, session, provider } = await sessionToESTransformer(value)
-		Promise.all([
-			kafkaProducers.session(value._id, session),
-			kafkaProducers.fulfillment(value.fulfillmentId, fulfillment),
-			kafkaProducers.agent(value.mentor._id, agent),
-			kafkaProducers.provider(value.organization._id, provider),
-		])
-			.then(() => {
-				console.log('Session Objects Passed To Producer Successfully')
-			})
-			.catch(() => {
-				console.error('Something went wrong while passing session objects')
-			})
+		const url = value.recordings.recording.playback.format[1].url
+		const sessionId = value._id
+
+		const headers = {
+			authorization: process.env.ASSENMBLYAI_TOKEN,
+		}
+		const body = {
+			audio_url: url,
+			language_code: 'en',
+			webhook_url: 'https://webhook.site/edcee813-74b0-414a-8e2d-4417070aed94',
+			webhook_auth_header_name: 'authorization',
+			webhook_auth_header_value: process.env.CALLBACK_TOKEN,
+		}
+		const response = await axios.post(process.env.ASSEMBLYAI_URI, body, { headers, timeout: 0 })
+		//console.log(response.data)
+		await sessionTranscriptQueries.create({
+			sessionId,
+			transcriptId: response.data.id,
+		})
 	} catch (err) {
 		console.log(err)
 	}
 }
 
-const messageHandlers = { sessionCreation }
+const messageHandlers = { sessionSummarization }
 
 module.exports = messageHandlers

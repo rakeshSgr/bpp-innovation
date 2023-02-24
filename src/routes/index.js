@@ -4,7 +4,9 @@ const bppController = require('@controllers/')
 const { authVerifier } = require('@middlewares/authVerifier')
 
 router.use(authVerifier)
+
 router.post('/search', bppController.search)
+router.post('/transcriptCallback', bppController.transcriptCallback)
 router.post('/autofill', bppController.autofill)
 
 module.exports = router
