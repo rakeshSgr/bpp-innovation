@@ -19,7 +19,7 @@ exports.findById = async (id) => {
 }
 exports.findOne = async (filter) => {
 	try {
-		return await sessionTranscript.findOne({ filter }).lean()
+		return await sessionTranscript.findOne(filter)
 	} catch (err) {
 		console.log(err)
 	}
