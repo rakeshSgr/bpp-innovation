@@ -6,7 +6,7 @@ const sessionTranscriptQueries = require('@database/storage/sessionTranscript/qu
 const sessionSummarization = async (value) => {
 	try {
 		const sessionTranscript = await sessionTranscriptQueries.findOne({ sessionId: value._id })
-		if (sessionTranscript.sessionId == value._id) {
+		if (sessionTranscript?.sessionId == value._id) {
 			return console.log('Session already Enqueued!!!')
 		}
 		const url = value.recordingUrl
