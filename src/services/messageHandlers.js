@@ -5,7 +5,7 @@ const sessionTranscriptQueries = require('@database/storage/sessionTranscript/qu
 
 const sessionSummarization = async (value) => {
 	try {
-		const url = value.recordings.recording.playback.format[1].url
+		const url = value.recordingUrl
 		const sessionId = value._id
 
 		const headers = {
