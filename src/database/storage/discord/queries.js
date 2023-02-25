@@ -1,10 +1,10 @@
 'use strict'
-const sessionTranscript = require('./model')
+const discord = require('./model')
 const { isEmpty } = require('@utils/generic')
 
 exports.create = async (data) => {
 	try {
-		return await new sessionTranscript(data).save()
+		return await new discord(data).save()
 	} catch (err) {
 		console.log(err)
 	}
@@ -12,21 +12,21 @@ exports.create = async (data) => {
 
 exports.findById = async (id) => {
 	try {
-		return await sessionTranscript.findById(id).lean()
+		return await discord.findById(id).lean()
 	} catch (err) {
 		console.log(err)
 	}
 }
 exports.findOne = async (filter) => {
 	try {
-		return await sessionTranscript.findOne({ filter }).lean()
+		return await discord.findOne({ filter }).lean()
 	} catch (err) {
 		console.log(err)
 	}
 }
 exports.findById = async (id) => {
 	try {
-		return await sessionTranscript.findById(id).lean()
+		return await discord.findById(id).lean()
 	} catch (err) {
 		console.log(err)
 	}
@@ -34,7 +34,7 @@ exports.findById = async (id) => {
 
 exports.findOneAndUpdate = async (filter, update) => {
 	try {
-		let doc = await sessionTranscript.findOneAndUpdate(filter, update)
+		let doc = await discord.findOneAndUpdate(filter, update)
 		return doc
 	} catch (err) {
 		throw err
