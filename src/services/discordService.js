@@ -74,3 +74,4 @@ const sendMessageTranscript = async (transcript) => {
 	}
 }
 exports.discordService = discordService
+exports.sendMessageTranscript = sendMessageTranscript

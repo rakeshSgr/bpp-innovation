@@ -3,7 +3,7 @@
 const axios = require('axios')
 const sessionTranscriptQueries = require('@database/storage/sessionTranscript/queries')
 const { kafkaProducers } = require('@helpers/kafkaProducers')
-
+const sendMessageTranscriptToDiscord = require('@services/discordService')
 exports.sessionSummarization = async (requestBody) => {
 	try {
 		let headers = {
@@ -36,6 +36,7 @@ exports.sessionSummarization = async (requestBody) => {
 		)
 		const sessionTranscript = await sessionTranscriptQueries.findOne({ transcriptId: requestBody.transcript_id })
 		console.log('sessionTranscript.sessionSummarization', sessionTranscript)
+		sendMessageTranscriptToDiscord.sendMessageTranscript(sessionTranscript)
 		Promise.all([
 			kafkaProducers.session(sessionTranscript.sessionId, {
 				type: 'SESSION_SUMMARY',
