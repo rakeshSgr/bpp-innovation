@@ -5,7 +5,7 @@ const discordHandler = require('@services/discordHandler')
 exports.messageRouter = (topic, value) => {
 	try {
 		if (topic === process.env.KAFKA_ON_SESSION_COMPLETION_TOPIC) {
-			// messageHandlers.sessionSummarization(value)
+			messageHandlers.sessionSummarization(value)
 			discordHandler.discord(value)
 		}
 	} catch (err) {
