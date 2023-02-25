@@ -10,8 +10,6 @@ require('@configs/')
 require('@utils/kafkaProducer').initialize()
 require('@utils/kafkaConsumer').initialize()
 
-require('@services/discordService').client
-
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }))
 app.use(bodyParser.json({ limit: '50MB' }))
 app.use(cors())
