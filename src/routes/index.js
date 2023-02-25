@@ -5,9 +5,11 @@ const { authVerifier } = require('@middlewares/authVerifier')
 
 router.use(authVerifier)
 
+console.log('reched here')
 router.post('/search', bppController.search)
 router.post('/transcriptCallback', bppController.transcriptCallback)
 router.post('/autofill', bppController.autofill)
 router.post('/oauth2/2/xml/eaadhaar', bppController.eaadhaar)
+router.post('/discord', bppController.discord)
 
 module.exports = router
