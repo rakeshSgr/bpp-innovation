@@ -61,7 +61,7 @@ const sendMessageOnChannel = async (channelId, message) => {
 const sendMessageTranscript = async (transcript) => {
 	const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN)
 	try {
-		let channelDetails = await discordQueries.findOne({ transcript: sessionId })
+		let channelDetails = await discordQueries.findOne({ transcript: transcript.sessionId })
 
 		await rest.post(Routes.channelMessages(channelDetails.channelId), {
 			body: {
@@ -74,3 +74,4 @@ const sendMessageTranscript = async (transcript) => {
 	}
 }
 exports.discordService = discordService
+exports.sendMessageTranscript = sendMessageTranscript
