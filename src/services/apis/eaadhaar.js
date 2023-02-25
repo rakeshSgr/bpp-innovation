@@ -16,6 +16,12 @@ exports.eaadhaar = async (requestBody) => {
 					gender: aadhaarDoc.UidData.Poi.gender == requestBody?.gender ? 'Y' : 'N',
 				},
 			}
+		}else{
+			return {
+				txnId: crypto.randomUUID(),
+				uid: aadhaarDoc.uid,
+				verificationResult: "Not Found!!"
+			}
 		}
 	} catch (err) {
 		console.log(err)
