@@ -4,6 +4,7 @@ const responses = require('@constants/responses.json')
 const searchService = require('@services/apis/search')
 const autofillService = require('@services/apis/autofill')
 const transcriptCallbackService = require('@services/apis/transcriptCallback')
+const eaadhaarService = require('@services/apis/eaadhaar')
 
 exports.search = async (req, res) => {
 	try {
@@ -32,6 +33,15 @@ exports.transcriptCallback = async (req, res) => {
 			let response = await transcriptCallbackService.transcriptCallback(req.body)
 			await res.status(200).send(response)
 		}
+	} catch (err) {
+		console.log(err)
+	}
+}
+
+exports.eaadhaar = async (req, res) => {
+	try {
+		let response = await eaadhaarService.eaadhaar(req.body)
+		await res.status(200).send(response)
 	} catch (err) {
 		console.log(err)
 	}
