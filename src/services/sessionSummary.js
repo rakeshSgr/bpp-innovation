@@ -42,7 +42,7 @@ exports.sessionSummarization = async (requestBody) => {
 				type: 'SESSION_SUMMARY',
 				sessionId: sessionTranscript.sessionId,
 				sessionSummary: summaryRes.data.choices[0].text,
-				sessionTranscript: transcriptRes.data.text,
+				transcript: transcriptRes.data.text,
 			}),
 		])
 			.then(() => {
