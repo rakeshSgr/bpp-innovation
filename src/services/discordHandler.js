@@ -4,15 +4,17 @@ const discordQueries = require('@database/storage/discord/queries')
 const { discordService } = require('@services/discordService')
 const discord = async (sessionDetails) => {
 	try {
-		let channelDetails = await discordQueries.findOne({ sessionId: sessionDetails._id })
+		console.log(sessionDetails)
+		let channelDetails = await discordQueries.find({ sessionId: sessionDetails._id })
 		console.log(channelDetails)
 
-		if (channelDetails?.sessionId == sessionDetails._id) {
+		if (channelDetails[0]?.sessionId == sessionDetails._id) {
 			return console.log('Session already Enqueued!!!')
 		}
 		console.log('reached')
 		discordService(sessionDetails)
 			.then((data) => {
+				console.log(data)
 				data.type = 'SESSION_DISCORD'
 				Promise.all([kafkaProducers.discord(data.channelName, data)])
 					.then(() => {
