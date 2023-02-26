@@ -20,6 +20,10 @@ const sessionTranscript = new mongoose.Schema({
 		type: String,
 		required: false,
 	},
+	recordingURL: {
+		type: String,
+		required: false,
+	},
 })
 
 const model = db.model('sessionTranscript', sessionTranscript)
