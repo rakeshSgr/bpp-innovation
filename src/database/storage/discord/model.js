@@ -7,10 +7,12 @@ const discord = new mongoose.Schema({
 	sessionId: {
 		type: String,
 		index: true,
+		unique: true,
 		required: true,
 	},
 	channelId: {
 		type: String,
+		unique: true,
 		index: true,
 		required: false,
 	},

@@ -8,53 +8,36 @@ const discordQueries = require('@database/storage/discord/queries')
 
 //First param from discord web
 const discordService = async (sessionDetails) => {
+	console.log('reached 2')
 	return new Promise(async (resolve, reject) => {
+		console.log('reached 8')
 		client.on('ready', async () => {
-			try {
-				const guild = await client.guilds.fetch(process.env.GUILD_ID)
-				const createChannel = await guild.channels.create({
-					name: sessionDetails.title,
-					reason: sessionDetails.title,
-				})
-				const channel = await guild.channels.cache.get(createChannel.id)
-				const invite = await channel.createInvite({
-					maxUses: 100,
-				})
-				let discordData = {
-					sessionId: sessionDetails._id,
-					channelId: createChannel.id,
-					channelName: createChannel.name,
-					inviteLink: `https://discord.gg/${invite.code}`,
-				}
-				await discordQueries.create(discordData)
-				//disciption data
-				await sendMessageOnChannel(createChannel.id, sessionDetails.description)
-				//url data
-				await sendMessageOnChannel(createChannel.id, sessionDetails.recordingUrl)
-
-				let channelDetails = discordQueries.findOne({ sessionId: sessionDetails._id })
-				resolve(channelDetails)
-			} catch (e) {
-				reject(e)
-			}
+			console.log('ready')
 		})
 		client.login(process.env.DISCORD_TOKEN)
+		try {
+			const guild = await client.guilds.fetch(process.env.GUILD_ID)
+			const createChannel = await guild.channels.create({
+				name: sessionDetails.title,
+				reason: sessionDetails.title,
+			})
+			const channel = await guild.channels.cache.get(createChannel.id)
+			const invite = await channel.createInvite({
+				maxUses: 100,
+			})
+			let discordData = {
+				sessionId: sessionDetails._id,
+				channelId: createChannel.id,
+				channelName: createChannel.name,
+				inviteLink: `https://discord.gg/${invite.code}`,
+			}
+			await discordQueries.create(discordData)
+
+			resolve(discordData)
+		} catch (e) {
+			reject(e)
+		}
 	})
-}
-
-const sendMessageOnChannel = async (channelId, message) => {
-	const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN)
-
-	try {
-		await rest.post(Routes.channelMessages(channelId), {
-			body: {
-				content: message,
-			},
-		})
-		return true
-	} catch (error) {
-		console.error(error)
-	}
 }
 
 const sendMessageTranscript = async (transcript) => {

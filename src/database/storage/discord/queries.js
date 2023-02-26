@@ -43,7 +43,15 @@ exports.findOneAndUpdate = async (filter, update) => {
 
 exports.findByIds = async (ids) => {
 	try {
-		return await User.find({ _id: { $in: ids } }).lean()
+		return await discord.find({ _id: { $in: ids } }).lean()
+	} catch (err) {
+		console.log(err)
+	}
+}
+
+exports.find = async (params) => {
+	try {
+		return await discord.find(params).lean()
 	} catch (err) {
 		console.log(err)
 	}
