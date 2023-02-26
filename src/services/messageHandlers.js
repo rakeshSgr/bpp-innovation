@@ -26,6 +26,7 @@ const sessionSummarization = async (value) => {
 		await sessionTranscriptQueries.create({
 			sessionId,
 			transcriptId: response.data.id,
+			recordingURL: url,
 		})
 		console.log('Enqueued to assembly AI & stored' + sessionId + 'to DB')
 	} catch (err) {

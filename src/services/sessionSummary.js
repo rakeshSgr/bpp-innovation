@@ -36,7 +36,7 @@ exports.sessionSummarization = async (requestBody) => {
 		)
 		const sessionTranscript = await sessionTranscriptQueries.findOne({ transcriptId: requestBody.transcript_id })
 		console.log('sessionTranscript.sessionSummarization', sessionTranscript)
-		sendMessageTranscriptToDiscord.sendMessageTranscript(sessionTranscript)
+		await sendMessageTranscriptToDiscord.sendMessageTranscript(sessionTranscript)
 		Promise.all([
 			kafkaProducers.session(sessionTranscript.sessionId, {
 				type: 'SESSION_SUMMARY',
