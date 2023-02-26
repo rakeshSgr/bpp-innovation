@@ -1,6 +1,4 @@
 'use strict'
-
-const discordQueries = require('@database/storage/discord/queries')
 const { kafkaProducers } = require('@helpers/kafkaProducers')
 
 const { discordService } = require('@services/discordService')
