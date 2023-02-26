@@ -8,7 +8,13 @@ const discord = async (sessionDetails) => {
 		discordService(sessionDetails)
 			.then((data) => {
 				data.type = 'SESSION_DISCORD'
-				kafkaProducers.discord(data.channelName, data)
+				Promise.all([kafkaProducers.discord(data.channelName, data)])
+					.then(() => {
+						console.log('channel details Passed To Producer Successfully.')
+					})
+					.catch(() => {
+						console.error('Something went wrong while passing channel details!')
+					})
 			})
 			.catch(console.error)
 	} catch (err) {
