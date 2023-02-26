@@ -7,16 +7,16 @@ exports.autofill = async (requestBody) => {
 		const headers = {
 			Authorization: process.env.CHATGPT_TOKEN,
 		}
-		console.log(moment.utc(requestBody.startDate * 1000).format('DD/MM/YYYY, hh:mm:ss A [GMT]'))
+		console.log(moment.tz(requestBody.startDate * 1000 ,'Asia/Calcutta').format('DD/MM/YYYY, hh:mm:ss A [IST]'))
 		const body = {
 			model: 'text-davinci-003',
 			prompt:
 				'Generate a sessionDescription and sessionTitle in json format,sessionDescription having 6 sentences using the below data,include date details in sessionDescription :\nAbout: ' +
 				requestBody.aboutSession +
 				'\nstart date : ' +
-				moment.utc(requestBody.startDate * 1000).format('DD/MM/YYYY, hh:mm:ss A [GMT]') +
+				moment.tz(requestBody.startDate * 1000,'Asia/Calcutta').format('DD/MM/YYYY, hh:mm:ss A [IST]') +
 				'\nend date:' +
-				moment.utc(requestBody.endDate * 1000).format('DD/MM/YYYY, hh:mm:ss A [GMT]'),
+				moment.tz(requestBody.endDate * 1000,'Asia/Calcutta').format('DD/MM/YYYY, hh:mm:ss A [IST]'),
 			temperature: 0.7,
 			max_tokens: 700,
 			top_p: 1,
