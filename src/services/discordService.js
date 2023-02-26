@@ -11,7 +11,7 @@ const discordService = async (sessionDetails) => {
 	return new Promise(async (resolve, reject) => {
 		let channelDetails = await discordQueries.findOne({ sessionId: sessionDetails._id })
 		if (channelDetails?.sessionId == sessionDetails._id) {
-			return console.log('Session already Enqueued!!!')
+			reject(console.log('Session already Enqueued!!!'))
 		}
 		client.on('ready', async () => {
 			try {
