@@ -1,6 +1,6 @@
 'use strict'
 const axios = require('axios')
-const moment = require('moment')
+const moment = require('moment-timezone');
 
 exports.autofill = async (requestBody) => {
 	try {
