@@ -8,39 +8,44 @@ const discordQueries = require('@database/storage/discord/queries')
 
 //First param from discord web
 const discordService = async (sessionDetails) => {
-	const p = new Promise((resolve, reject) => {
-		client.on('ready', async () => {
-			try {
-				const guild = await client.guilds.fetch(process.env.GUILD_ID)
-				const createChannel = await guild.channels.create({
-					name: sessionDetails.title,
-					reason: sessionDetails.title,
-				})
-				const channel = await guild.channels.cache.get(createChannel.id)
-				const invite = await channel.createInvite({
-					maxUses: 100,
-				})
-				let discordData = {
-					sessionId: sessionDetails._id,
-					channelId: createChannel.id,
-					channelName: createChannel.name,
-					inviteLink: `https://discord.gg/${invite.code}`,
-				}
-				await discordQueries.create(discordData)
-				//disciption data
-				await sendMessageOnChannel(createChannel.id, sessionDetails.description)
-				//url data
-				await sendMessageOnChannel(createChannel.id, sessionDetails.recordingUrl)
+	return new Promise(async (resolve, reject) => {
+		let channelDetails = discordQueries.findOne({ sessionId: sessionDetails._id })
+		if (!channelDetails) {
+			client.on('ready', async () => {
+				try {
+					const guild = await client.guilds.fetch(process.env.GUILD_ID)
+					const createChannel = await guild.channels.create({
+						name: sessionDetails.title,
+						reason: sessionDetails.title,
+					})
+					const channel = await guild.channels.cache.get(createChannel.id)
+					const invite = await channel.createInvite({
+						maxUses: 100,
+					})
+					let discordData = {
+						sessionId: sessionDetails._id,
+						channelId: createChannel.id,
+						channelName: createChannel.name,
+						inviteLink: `https://discord.gg/${invite.code}`,
+					}
+					await discordQueries.create(discordData)
+					//disciption data
+					await sendMessageOnChannel(createChannel.id, sessionDetails.description)
+					//url data
+					await sendMessageOnChannel(createChannel.id, sessionDetails.recordingUrl)
 
-				let channelDetails = discordQueries.findOne({ sessionId: sessionDetails._id })
-				resolve(channelDetails)
-			} catch (e) {
-				reject(e)
-			}
-		})
-		client.login(process.env.DISCORD_TOKEN)
+					let channelDetails = discordQueries.findOne({ sessionId: sessionDetails._id })
+					resolve(channelDetails)
+				} catch (e) {
+					reject(e)
+				}
+			})
+			client.login(process.env.DISCORD_TOKEN)
+		} else {
+			console.log('rejecting this ')
+			reject('channel already created')
+		}
 	})
-	return p
 }
 
 const sendMessageOnChannel = async (channelId, message) => {

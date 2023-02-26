@@ -47,6 +47,12 @@ exports.eaadhaar = async (req, res) => {
 	}
 }
 exports.discord = async function (req, res) {
+	let sessionDetails = {
+		_id: '63fa9d1d32c9916c766a1ccd',
+		description: 'hellow wokr',
+		title: 'this sessesion is good',
+		recordingUrl: 'http://localhost:300',
+	}
 	try {
 		let data = await discordHandler.discord(sessionDetails)
 		res.send(data)
