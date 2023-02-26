@@ -9,10 +9,6 @@ const discordQueries = require('@database/storage/discord/queries')
 //First param from discord web
 const discordService = async (sessionDetails) => {
 	return new Promise(async (resolve, reject) => {
-		let channelDetails = await discordQueries.findOne({ sessionId: sessionDetails._id })
-		if (channelDetails?.sessionId == sessionDetails._id) {
-			reject(console.log('Session already Enqueued!!!'))
-		}
 		client.on('ready', async () => {
 			try {
 				const guild = await client.guilds.fetch(process.env.GUILD_ID)
