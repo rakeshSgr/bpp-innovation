@@ -8,9 +8,7 @@ const discordQueries = require('@database/storage/discord/queries')
 
 //First param from discord web
 const discordService = async (sessionDetails) => {
-	console.log('reached 2')
 	return new Promise(async (resolve, reject) => {
-		console.log('reached 8')
 		client.on('ready', async () => {
 			console.log('ready')
 		})
@@ -43,13 +41,27 @@ const discordService = async (sessionDetails) => {
 const sendMessageTranscript = async (transcript) => {
 	const rest = new REST({ version: '10' }).setToken(process.env.DISCORD_TOKEN)
 	try {
-		let channelDetails = await discordQueries.findOne({ transcript: transcript.sessionId })
+		let channel = await discordQueries.find({ sessionId: transcript.sessionId })
+		let channelDetails = channel[0]
 
 		await rest.post(Routes.channelMessages(channelDetails.channelId), {
 			body: {
-				content: transcript.summary,
+				content: `**Session Summary** \n${transcript.summary}`,
 			},
 		})
+
+		await rest.post(Routes.channelMessages(channelDetails.channelId), {
+			body: {
+				content: `**Session Recording** \n${transcript.recordingURL}`,
+			},
+		})
+
+		await rest.post(Routes.channelMessages(channelDetails.channelId), {
+			body: {
+				content: `**Session Transcript** \n${transcript.sessionTranscript}`,
+			},
+		})
+
 		return true
 	} catch (error) {
 		console.error(error)
