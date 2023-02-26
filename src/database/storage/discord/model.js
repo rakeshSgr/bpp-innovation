@@ -6,6 +6,7 @@ const db = require('@configs/mongodb')
 const discord = new mongoose.Schema({
 	sessionId: {
 		type: String,
+		index: true,
 		required: true,
 	},
 	channelId: {
