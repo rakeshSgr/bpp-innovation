@@ -26,7 +26,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   A mentor registers to the app.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-1.jpg" width=40% >
+<img src="https://ibb.co/z5w7d0w" width=40% >
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-2.jpg" width=40% >
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=40% >
 
