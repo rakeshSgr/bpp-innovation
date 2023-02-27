@@ -48,7 +48,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   After the session is completed, a dedicated Discord channel is created, and the transcript and summary are posted.
 
-<img src="https://github.com/rakeshSgr/bpp-innovation/blob/develop/Assets/discord.png?raw=true" width=40% >
+<img src="https://github.com/rakeshSgr/bpp-innovation/blob/develop/Assets/discord.png?raw=true" width=100% >
 
 -   The mentor and mentee can continue the conversation and discuss further in the dedicated Discord channel, building on the insights and knowledge gained from the session.
 
