@@ -7,10 +7,26 @@ const bodyParser = require('body-parser')
 const cors = require('cors')
 const app = express()
 require('@configs/')
+require('@utils/kafkaProducer').initialize()
+require('@utils/kafkaConsumer').initialize()
 
 app.use(bodyParser.urlencoded({ extended: true, limit: '50MB' }))
 app.use(bodyParser.json({ limit: '50MB' }))
 app.use(cors())
+
+app.all('*', (req, res, next) => {
+	console.log('***BPP-INNOVATION Service Request Log***', {
+		request: {
+			requestType: `Request Type ${req.method} for ${req.url} on ${new Date()} from ${req.headers['user-agent']}`,
+			requestHeaders: req.headers,
+			requestBody: req.body,
+			requestFiles: req.files,
+		},
+	})
+	console.log('***BPP-INNOVATION Service Request Log Ends Here!!***')
+	next()
+})
+
 app.use(process.env.ROOT_ROUTE, require('@routes'))
 
 app.listen(process.env.APPLICATION_PORT, (res, err) => {
