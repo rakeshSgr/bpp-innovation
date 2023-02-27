@@ -26,39 +26,36 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   A mentor registers to the app.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-1.jpg" width=50% >
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-2.jpg" width=50% >
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=50% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-1.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-2.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=40% >
 
 -   A mentor logs in to the platform and Edits his profile.
 
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-4-9.jpg)
-
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-5.jpg)
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-4-9.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-5.jpg" width=40% >
 
 -   A mentor creates a new mentoring session using Chat GPT 3 AI. The mentor inputs the session title, and start and end date, using these data GPT-3 generates a session description.
 
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-6.jpg)
-
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-7.jpg)
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-6.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-7.jpg" width=40% >
 
 -   Once the Session is completed, Assembly AI generates a transcript of the session using the recorded session mp4 file, and GPT-3 generates a summary using the transcript.
 
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-8.jpg)
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-8.jpg" width=40% >
 
 -   The session summary along with the discord invite link, transcript, and recording URL is passed on to the BAP in the status /on_status call. The data will be added in the fulfillments as tags
 
 -   After the session is completed, a dedicated Discord channel is created, and the transcript and summary are posted.
 
-![](https://github.com/rakeshSgr/bpp-innovation/blob/develop/Assets/discord.png?raw=true)
+<img src="https://github.com/rakeshSgr/bpp-innovation/blob/develop/Assets/discord.png?raw=true" width=40% >
 
 -   The mentor and mentee can continue the conversation and discuss further in the dedicated Discord channel, building on the insights and knowledge gained from the session.
 
 -   The mentor can also receive verifiable credentials through DigiLocker integration, increasing their trustworthiness as a mentor. The verified credentials can be passed in the creds field of the agent, further increasing the mentor's credibility on the platform.
 
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-9.jpg)
-
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-10.jpg)
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-9.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-10.jpg" width=40% >
 
 ## Tech Stack
 
