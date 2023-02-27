@@ -5,7 +5,6 @@
 
 ## Backend
 
-
     	MongoDB
     	Node.js
         Kafka
@@ -62,35 +61,31 @@ ELEVATE/bpp-innovation/src$ node app.js
 
 1. Ionic
 
-           Ionic CLI                                      : 5.4.16 (/usr/local/lib/node_modules/ionic)                                                    
+           Ionic CLI                    : 5.4.16 (/usr/local/lib/node_modules/ionic)                                                    
 
 
-           Ionic Framework                         : @ionic/angular 6.5.6                                                      
+           Ionic Framework              : @ionic/angular 6.5.6                                                      
 
 
-           @angular-devkit/build-angular    : 13.2.6                                                         
+           @angular-devkit/build-angular: 13.2.6                                                         
 
 
-           @angular-devkit/schematics      : 13.2.6                                                         
+           @angular-devkit/schematics   : 13.2.6                                                         
 
 
-           @angular/cli                               : 13.2.6                                                                 
+           @angular/cli                 : 13.2.6                                                                 
 
 
-           @ionic/angular-toolkit                : 6.1.0    
+           @ionic/angular-toolkit       : 6.1.0    
 
 2. Capacitor
 
-      Capacitor CLI      : 3.9.0                                                                             
+        Capacitor CLI           : 3.9.0         
+        @capacitor/android      : 3.6.0                                                          
+      	
+        @capacitor/core         : 3.9.0                                                                             
 
-
-     	  @capacitor/android : 3.6.0                                                                                         
-
-
-      	  @capacitor/core    : 3.9.0                                                                             
-
-
-       	  @capacitor/ios     : 3.5.0   
+       	@capacitor/ios          : 3.5.0   
 
 3. Utility
 
@@ -102,17 +97,13 @@ ELEVATE/bpp-innovation/src$ node app.js
 
 4. System
 
-        Android SDK Build-tools : 34-rc1                                                                                
+        Android SDK Build-tools : 34-rc1                    
 
-
-        Android SDK Platform-tools : 33.0.3                                                                                      
-
-
-        NodeJS            : v18.12.1 (/usr/local/bin/node)                                                                    
-
-
-        npm               : 8.19.2                                                                                       
-
+        Android SDK Platform-tools : 33.0.3         
+        
+        NodeJS            : v18.12.1 (/usr/local/bin/node)     
+        
+        npm               : 8.19.2                    
 
         OS                : Linux 5.15   
 
