@@ -26,9 +26,8 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   A mentor registers to the app.
 
-<img src="https://ibb.co/z5w7d0w" width=40% >
+<img src="./Assets/screen-1.jpg" width=40% >
 
-![](https://ibb.co/z5w7d0w)
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-2.jpg" width=40% >
 
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=40% >
@@ -59,7 +58,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   The mentor can also receive verifiable credentials through DigiLocker integration, increasing their trustworthiness as a mentor. The verified credentials can be passed in the creds field of the agent, further increasing the mentor's credibility on the platform.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-9.jpg" width=40% >
+<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-4-9.jpg" width=40% >
 
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-10.jpg" width=40% >
 
