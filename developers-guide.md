@@ -6,7 +6,7 @@
 ## Backend
 
     	MongoDB
-    	Node.js
+        Node.js
         Kafka
         Chat GPT 3
 		Discord
