@@ -5,14 +5,14 @@
 
 ## Backend
 
-    	MongoDB
+        MongoDB
         Node.js
         Kafka
         Chat GPT 3
-		Discord
-		DigiLocker ( Mock API’s )
-		AssemblyAI
-		Sendgrid 
+        Discord
+        DigiLocker ( Mock API’s )
+        AssemblyAI
+        Sendgrid 
 
 
 ### Setup Guide for BPP-Innovation repo
