@@ -46,13 +46,13 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   Once the Session is completed, Assembly AI generates a transcript of the session using the recorded session mp4 file, and GPT-3 generates a summary using the transcript.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-8.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502918742-screen-8.jpg" width=40% >
 
 -   The session summary along with the discord invite link, transcript, and recording URL is passed on to the BAP in the status /on_status call. The data will be added in the fulfillments as tags
 
 -   After the session is completed, a dedicated Discord channel is created, and the transcript and summary are posted.
 
-<img src="https://github.com/rakeshSgr/bpp-innovation/blob/develop/Assets/discord.png?raw=true" width=100% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677503057500-discord.png" width=100% >
 
 -   The mentor and mentee can continue the conversation and discuss further in the dedicated Discord channel, building on the insights and knowledge gained from the session.
 
@@ -60,7 +60,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 <img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502601212-screen-4-9.jpg" width=40% >
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-10.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502983974-screen-10.jpg" width=40% >
 
 ## Tech Stack
 
@@ -76,7 +76,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 ## Architecture
 
-![](https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/Architecture.jpg)
+![](https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677503128568-Architecture.jpg)
 
 ## Open-source and Digital Public Goods leveraged/used
 
