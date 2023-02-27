@@ -26,23 +26,23 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   A mentor registers to the app.
 
-<img src="./Assets/screen-1.jpg" width=40% >
-
 <img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502328822-screen-1.jpg" width=40% >
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502482183-screen-2.jpg" width=40% >
+
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502542285-screen-3.jpg" width=40% >
 
 -   A mentor logs in to the platform and Edits his profile.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-4-9.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502601212-screen-4-9.jpg" width=40% >
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-5.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502690012-screen-5.jpg" width=40% >
 
 -   A mentor creates a new mentoring session using Chat GPT 3 AI. The mentor inputs the session title, and start and end date, using these data GPT-3 generates a session description.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-6.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502749710-screen-6.jpg" width=40% >
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-7.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502823366-screen-7.jpg" width=40% >
 
 -   Once the Session is completed, Assembly AI generates a transcript of the session using the recorded session mp4 file, and GPT-3 generates a summary using the transcript.
 
@@ -58,7 +58,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 -   The mentor can also receive verifiable credentials through DigiLocker integration, increasing their trustworthiness as a mentor. The verified credentials can be passed in the creds field of the agent, further increasing the mentor's credibility on the platform.
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-4-9.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502601212-screen-4-9.jpg" width=40% >
 
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-10.jpg" width=40% >
 
