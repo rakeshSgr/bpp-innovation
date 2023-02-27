@@ -28,7 +28,7 @@ Overall, our platform is a comprehensive mentoring solution that combines the la
 
 <img src="./Assets/screen-1.jpg" width=40% >
 
-<img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-2.jpg" width=40% >
+<img src="https://mentoring-dev-storage.s3.ap-south-1.amazonaws.com/users/63fb94cbf7daccdee55c939f-1677502328822-screen-1.jpg" width=40% >
 
 <img src="https://raw.githubusercontent.com/rakeshSgr/bpp-innovation/develop/Assets/screen-3.jpg" width=40% >
 
